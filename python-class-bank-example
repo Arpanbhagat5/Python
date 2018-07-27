@@ -1,0 +1,27 @@
+Object Oriented Programming Challenge
+For this challenge, create a bank account class that has two attributes:
+owner
+balance
+and two methods:
+deposit
+withdraw
+As an added requirement, withdrawals may not exceed the available balance.
+Instantiate your class, make several deposits and withdrawals, and test to make sure the account can't be overdrawn.
+In [17]:
+
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+    def __str__(self):
+        return "account owner: {} and account balance : {}".format(self.owner, self.balance)
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance = self.balance - amount
+            print("The withdraw is successful, new balance is : {}".format(self.balance))
+        else:
+            print("insufficient funds")
+            
+    def deposit(self,amount):
+        self.balance = self.balance + amount
+        print("The deposit is successful, new balance is : {}".format(self.balance))

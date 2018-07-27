@@ -1,0 +1,68 @@
+Object Oriented Programming
+Homework Assignment
+Problem 1
+Fill in the Line class methods to accept coordinates as a pair of tuples and return the slope and distance of the line.
+In [16]:
+
+class Line:
+    
+    def __init__(self,coor1,coor2):
+        self.coor1 = coor1
+        self.coor2 = coor2
+    
+    def distance(self):
+        return ((self.coor2[1]- self.coor1[1])**2 + (self.coor2[0] - self.coor1[0])**2)**0.5
+    
+    def slope(self):
+        return (self.coor2[1]- self.coor1[1]) / (self.coor2[0] - self.coor1[0])
+In [17]:
+
+# EXAMPLE OUTPUT
+​
+coordinate1 = (3,2)
+coordinate2 = (8,10)
+​
+li = Line(coordinate1,coordinate2)
+In [18]:
+
+li.distance()
+Out[18]:
+9.433981132056603
+In [19]:
+
+li.slope()
+Out[19]:
+1.6
+Problem 2
+Fill in the class
+In [37]:
+
+class Cylinder:
+    
+    pi = 3.14
+    def __init__(self,height=1,radius=1):
+        self.height = height
+        self.radius = radius
+        
+    def volume(self):
+        return Cylinder.pi*self.radius**2*self.height
+    
+    def surface_area(self):
+        return Cylinder.pi*2*self.radius*self.height + 2*Cylinder.pi*self.radius**2
+In [39]:
+
+# EXAMPLE OUTPUT
+c = Cylinder(2,3)
+In [30]:
+
+c.volume()
+Out[30]:
+56.52
+In [40]:
+
+c.surface_area()
+Out[40]:
+94.2
+In [ ]:
+
+​
